@@ -13,6 +13,7 @@ class App extends Component {
       starred: [],
       isFetching: false
     }
+    this.handleSearch = this.handleSearch.bind(this)
   }
 
   getGitHubUrl (username, type) {
@@ -75,11 +76,12 @@ class App extends Component {
   render () {
     return (
       <AppContent
-        isFetching={this.state.isFetching}
-        userinfo={this.state.userinfo}
-        repos={this.state.repos}
-        starred={this.state.starred}
-        handleSearch={(e) => this.handleSearch(e)}
+        // isFetching={this.state.isFetching}
+        // userinfo={this.state.userinfo}
+        // repos={this.state.repos}
+        // starred={this.state.starred}
+        {...this.state}
+        handleSearch={this.handleSearch}
         getRepos={this.handleAction('repos')}
         getStarred={this.handleAction('starred')}
       />
